@@ -1,0 +1,120 @@
+@media (max-width: 768px) {
+  header {
+    padding: 10px 0;
+  }
+  header .heder__right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    z-index: 1000;
+  }
+  header .heder__right.show {
+    display: block;
+  }
+  header .heder__right .main__menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: #fff;
+    width: 227px;
+    display: flex;
+    flex-direction: column;
+  }
+  header .heder__right .main__menu li {
+    padding: 20px 0 20px 20px;
+    font-size: 1.8rem;
+  }
+  header .heder__right .main__menu li > .sub__menu {
+    z-index: 999;
+  }
+  header .heder__right .overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  header .heder__right .btn__close {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 10px;
+  }
+  header .heder__right .btn__close i {
+    color: #fff;
+    font-size: 2rem;
+  }
+  header .main__menu li .sub__menu {
+    position: absolute;
+    z-index: 0;
+  }
+  header .main__menu li .sub__menu.hidden {
+    display: none;
+  }
+  header .btn_menu {
+    display: block;
+  }
+  #content .list__news .card__news {
+    width: 230px;
+  }
+  #content .sidebar {
+    display: flex;
+  }
+  #content .sidebar .about__me .inf {
+    text-align: start;
+    display: flex;
+  }
+  #content .sidebar .about__me .inf img {
+    width: 120px;
+    height: 120px;
+  }
+  #content .sidebar .popular {
+    display: none;
+  }
+  .scroll__top {
+    display: none;
+  }
+  .slider__right img {
+    height: 126px;
+  }
+}
+@media (max-width: 575px) {
+  #content {
+    margin-top: 10px;
+  }
+  #content .list__news {
+    justify-content: center;
+  }
+  #content .list__news .card__news {
+    width: 100%;
+    margin-top: 8px;
+    display: flex;
+  }
+  #content .list__news .card__news .thumb__nail {
+    width: 150px;
+    max-width: 150px;
+  }
+  #content .list__news .card__news .card__body {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #content .list__news .card__news .card__body .news__short {
+    display: none;
+  }
+  #content .list__news .card__news .card__body .title {
+    font-size: 1.4rem;
+    font-weight: normal;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../resources/scss/responsive.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACI;IACI;;EAEA;IACI;IACA;IACA;IACA;IACA;IACA;IACA;;EAEA;IACI;;EAGJ;IACI;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;;EAEA;IACI;IACA;;EAEA;IACI;;EAKZ;IACI;IACA;IACA;IACA;IACA;IACA;IACA;;EAGJ;IACI;IACA;IACA;IACA;IACA;;EAEA;IACI;IACA;;EAOJ;IACI;IACA;;EAEA;IACI;;EAMhB;IACI;;EAMA;IACI;;EAMR;IACI;;EAKI;IACI;IACA;;EAEA;IACI;IACA;;EAMZ;IACI;;EAKZ;IACI;;EAIA;IACI;;;AAKZ;EACI;IACI;;EAEA;IACI;;EAEA;IACI;IACA;IACA;;EAEA;IACI;IACA;;EAGJ;IACI;IACA;IACA;IACA;;EAEA;IACI;;EAGJ;IACI;IACA%22,%22file%22:%22responsive.css%22%7D */

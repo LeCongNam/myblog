@@ -1,0 +1,160 @@
+@media (max-width: 768px) {
+    header {
+        padding: 10px 0;
+
+        .heder__right {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            display: none;
+            z-index: 1000;
+
+            &.show {
+                display: block;
+            }
+
+            .main__menu {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 999;
+                background-color: #fff;
+                width: 227px;
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    padding: 20px 0 20px 20px;
+                    font-size: 1.8rem;
+
+                    &>.sub__menu {
+                        z-index: 999;
+                    }
+                }
+            }
+
+            .overlay {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+
+            .btn__close {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 10px;
+                padding: 10px;
+
+                i {
+                    color: #fff;
+                    font-size: 2rem;
+                }
+            }
+        }
+        
+        .main__menu {
+            li{
+                .sub__menu{
+                    position: absolute;
+                    z-index: 0;
+
+                    &.hidden{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .btn_menu {
+            display: block;
+        }
+    }
+
+    #content {
+        .list__news {
+            .card__news {
+                width: 230px;
+
+                .thumb__nail {}
+            }
+        }
+
+        .sidebar {
+            display: flex;
+
+
+            .about__me {
+
+                .inf {
+                    text-align: start;
+                    display: flex;
+
+                    img {
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+
+            }
+
+            .popular {
+                display: none;
+            }
+        }
+    }
+
+    .scroll__top {
+        display: none;
+    }
+
+    .slider__right {
+        img {
+            height: 126px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    #content {
+        margin-top: 10px;
+
+        .list__news {
+            justify-content: center;
+
+            .card__news {
+                width: 100%;
+                margin-top: 8px;
+                display: flex;
+
+                .thumb__nail {
+                    width: 150px;
+                    max-width: 150px;
+                }
+
+                .card__body {
+                    padding-left: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .news__short {
+                        display: none;
+                    }
+
+                    .title {
+                        font-size: 1.4rem;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}
