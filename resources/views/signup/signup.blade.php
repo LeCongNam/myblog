@@ -47,7 +47,7 @@
             <button>Submit</button>
         {!! Form::close() !!}
         @if($errors->any())
-            <h4 style="color: red;">{{$errors->first()}}</h4>
+            <h4 style="color: red">{{$errors->first()}}</h4>
         @endif
         <p class="message">Have An Account? <a href="/login">Login</a></p>
         <p class="message">Forgot your password? <a href="/forgot-password">Click here to reset it</a></p>

@@ -10,7 +10,9 @@ use Mail;
 use App\Mail\SystemSendMail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Redis;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 
@@ -37,6 +39,7 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
+
         $username = $request->username;
         $password = $request->password;
 
@@ -46,16 +49,27 @@ class UserController extends Controller
             'password' => 'required | min:3 ',
         ]);
 
-        if (Auth::attempt(['username'=>$username, 'password'=> $password, 'deleted_at'=> null])) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('/');
+        if ($validator->fails()) {
+            return Redirect::back()->withInput()->withErrors($validator->errors());
         }
 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        $user = User::where('username', $username)->first();
 
+        if (isset($user->username)){
+           if(Hash::check($password, $user->password)){
+               $request->session()->regenerate();
+                Auth::login($user);
+               return Redirect::route('home');
+           }else{
+               return back()->withErrors([
+                   'password' => 'email or password incorrect',
+               ])->onlyInput('email');
+           }
+        }else{
+            return back()->withErrors([
+                'email' => 'email or password incorrect',
+            ])->onlyInput('email');
+        }
     }
 
     public function signup(Request $request)
@@ -85,13 +99,29 @@ class UserController extends Controller
             [
                 'username' => $request->username,
                 'email' => $request->email,
-                'password' => $request->password,
+                'password' => Hash::make($request->password, [
+                    'rounds' => 12,
+                    'memory' => 1024,
+                    'time' => 2,
+                    'threads' => 2,
+                ]),
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
             ]
         );
 
-        return view('login.login', ['user' => $user]);
+        return Redirect::route('login');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return Redirect::route('home');
     }
 
 

@@ -140,9 +140,9 @@
                         </ul>
 
                     @else
-                        <span>
+                        <span style="display: flex;">
                             <i class="fa-solid fa-user"></i>
-                            <p>{{$user}}</p>
+                            <p class="ml-2">{{$user}}</p>
                         </span>
 
                         <ul class="sub__menu">

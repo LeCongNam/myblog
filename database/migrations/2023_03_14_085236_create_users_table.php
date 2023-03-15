@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->date('deleted_at')->default(null)->nullable(true);
+            $table->dateTime('deleted_at')->default(null)->nullable(true);
             $table->rememberToken();
             $table->timestamps();
 
