@@ -37,6 +37,7 @@ body {
 }
 
 .form input[type="text"],
+.form input[type="email"],
 .form input[type="password"] {
   font-family: 'Roboto', sans-serif;
   outline: none;

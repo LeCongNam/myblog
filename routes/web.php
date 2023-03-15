@@ -20,14 +20,24 @@ Route::get('/post/{id?}', [DetailController::class, 'detailPost']);
 
 Route::get('/forgot-password', [UserController::class, 'sendMail']);
 
+Route::post('/login', [UserController::class, 'login']);
+
+
 Route::get('/login', function ()
 {
     return view('login/login');
 });
 
+Route::post('/signup', [UserController::class, 'signup'])->name('signup');
+
 Route::get('/signup', function ()
 {
     return view('signup/signup');
 });
+
+
+Route::get('/test', [UserController::class, 'test']);
+Route::get('/test1', [UserController::class, 'test1']);
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

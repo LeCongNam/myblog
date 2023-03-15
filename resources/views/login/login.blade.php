@@ -30,7 +30,7 @@
 </head>
 
 <body>
- 
+
 
     <div class="login-page">
         <div class="avatar">
@@ -38,7 +38,8 @@
         </div>
         <div class="form">
           <h2>Login</h2>
-          <form>
+          <form action="/login" method="POST">
+              @csrf
             <input type="text" placeholder="Username">
             <input type="password" placeholder="Password">
             <button>Log in</button>

@@ -13,7 +13,7 @@ class SystemSendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-     public $mail_data;
+    public $mail_data;
     public function __construct($mail_data)
     {
         
