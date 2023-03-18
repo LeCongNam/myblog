@@ -20,10 +20,10 @@ Route::get('/post/{id?}', [DetailController::class, 'detailPost']);
 
 Route::get('/forgot-password', [UserController::class, 'sendMail']);
 
-Route::get('/login', function ()
-{
-    return view('login/login');
-});
+
+
+Route::get('/login', [UserController::class,'formLogin']);
+Route::post('/login', [UserController::class, 'login'])->name('login');
 
 Route::get('/signup', function ()
 {

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 // Mail
 use Mail;
 use App\Mail\SystemSendMail;
+
+use Illuminate\Support\Facades\View;
   
 
 class UserController extends Controller
@@ -21,5 +23,16 @@ class UserController extends Controller
         Mail::to($mail)->send(new SystemSendMail($mailData));
 
         return redirect()->route('home');
+    }
+
+
+    public function formLogin(){
+        return view('login.login');
+    }
+
+
+    public function login()
+    {
+        
     }
 }

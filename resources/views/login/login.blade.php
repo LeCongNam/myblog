@@ -34,15 +34,22 @@
 
     <div class="login-page">
         <div class="avatar">
-          <img src="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_960_720.png" alt="Avatar">
+          <i class="fa-solid fa-house"></i>
         </div>
         <div class="form">
           <h2>Login</h2>
-          <form>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button>Log in</button>
-          </form>
+            {!! Form::open(['method' => 'PUT', 'route' => ['login'] ]) !!}
+                <div class="form-group">
+                    {!!  Form::text('username', '', ['class' => 'form-control', 'placeholder'=>'username']) !!}
+                </div>
+                <div class="form-group">
+                    {!!  Form::password('username',  ['class' => 'form-control', 'placeholder'=>'password']) !!}
+                </div>
+
+                <div class="form-group">
+                  <button>Log in</button>
+                </div>
+           {!! Form::close() !!}
           <p class="message">Not registered? <a href="/signup">Create an account</a></p>
           <p class="message">Forgot your password? <a href="/forgot-password">Click here to reset it</a></p>
         </div>

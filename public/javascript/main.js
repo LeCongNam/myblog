@@ -19,7 +19,8 @@ Array.from(heartIcons).forEach(heart => {
 
 window.addEventListener('scroll', () => {
     let positionX = window.scrollY
-    if (positionX >= 200) {
+    console.log(positionX);
+    if (Number(positionX) >= 30) {
         headerEle.classList.add('sticky')
         scrollTop.classList.add('show')
     } else {
@@ -52,16 +53,6 @@ Array.from(heartIcons).forEach(heart => {
 })
 
 
-window.addEventListener('scroll', () => {
-    let positionX = window.scrollY
-    if (positionX >= 200) {
-        headerEle.classList.add('sticky')
-        scrollTop.classList.add('show')
-    } else {
-        headerEle.classList.remove('sticky')
-        scrollTop.classList.remove('show')
-    }
-})
 
 scrollTop.onclick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

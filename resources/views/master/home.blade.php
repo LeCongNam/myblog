@@ -125,8 +125,8 @@
 
                         <ul class="sub__menu">
                             <li>
-                                <a href="/signin">
-                                    Sign In
+                                <a href="/signup">
+                                    Sign Up
                                 </a>
                             </li>
                             <li>
@@ -146,8 +146,8 @@
     </header>
 
     @section('slider')
-        @show
-   
+    @show
+
     <div id="content" class="mt-lg-4">
         <div class="container">
             <div class="row">
@@ -200,19 +200,55 @@
 
     <!-- scroll to top -->
 
-    <div class="scroll__top">
-        <i class="fa-solid fa-chevron-up"></i>
+    <div class="content-fixed">
+        <div class="scroll__top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </div>
+
+
+        <!-- Messenger Plugin chat Code -->
+        <div id="fb-root"></div>
+
+        <!-- Your Plugin chat code -->
+        <div class="mb-3">
+            <div id="fb-customer-chat" class="fb-customerchat">
+            </div>
+        </div>
     </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "773188126055614");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v16.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
 
     <script src="/javascript/main.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
 </body>

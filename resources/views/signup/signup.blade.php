@@ -19,7 +19,8 @@
     <!--  Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     {{-- Reset css --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
@@ -29,22 +30,24 @@
 </head>
 
 <body>
-    <div class="my-form bg-dark">
-        <h1>Login Form</h1>
-        <form>
-          <div class="mb-3 mt-4">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
-          <div class="mb-3 mt-4">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <button type="submit" class="btn btn-light mt-3">LOGIN</button>
-        </form>
-        <p class="mt-4">Have a Account? <a href="/login">Login now</a></p>
+ 
+
+    <div class="login-page">
+        <div class="avatar">
+          <img src="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_960_720.png" alt="Avatar">
+        </div>
+        <div class="form">
+          <h2>Login</h2>
+          <form>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>Log in</button>
+          </form>
+          <p class="message">Have An Acount? <a href="/login">Create an account</a></p>
+          <p class="message">Forgot your password? <a href="/forgot-password">Click here to reset it</a></p>
+        </div>
       </div>
-      
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
