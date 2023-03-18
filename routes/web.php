@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,31 @@ Route::get('/forgot-password', [UserController::class, 'sendMail']);
 
 
 
-Route::get('/login', [UserController::class,'formLogin']);
-Route::post('/login', [UserController::class, 'login'])->name('login');
+Route::post('login', [UserController::class, 'login']);
 
+
+Route::get('login', function ()
+{
+    $user = Auth::check();
+    if($user){
+        return  redirect()->back();
+    }else{
+        return view('login/login');
+    }
+})->name('login');
+
+Route::post('/signup', [UserController::class, 'signup'])->name('signup');
 Route::get('/signup', function ()
 {
-    return view('signup/signup');
+    if(Auth::user()){
+        return  redirect()->back();
+    }else{
+        return view('signup/signup');
+    }
 });
+
+
+Route::get('/logout', [UserController::class, 'logout']);
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
